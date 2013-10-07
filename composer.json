@@ -1,0 +1,46 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"require": {
+		"laravel/framework": "4.0.*",
+		"jasonlewis/enhanced-router": "1.0.*",
+		"aws/aws-sdk-php": "2.*",
+		"intervention/image": "dev-master"
+	},
+	"require-dev" : {
+		"phpunit/phpunit": "3.8.*@dev",
+		"way/generators": "dev-master",
+		"way/phpunit-wrappers": "dev-master",
+		"mockery/mockery": "dev-master",
+		"way/laravel-test-helpers": "dev-master"
+	},
+	"autoload": {
+		"psr-0": {
+			"Codeaqua": "app/"
+		},
+		"classmap": [
+			"app/commands",
+			"app/database/migrations",
+			"app/database/seeds"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan optimize"
+		],
+		"pre-update-cmd": [
+			"php artisan clear-compiled"
+		],
+		"post-update-cmd": [
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev"
+}

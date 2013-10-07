@@ -1,0 +1,66 @@
++--------+--------------------------------------------+----------------------+-------------------------------------------------------------+----------------+---------------+
+| Domain | URI                                        | Name                 | Action                                                      | Before Filters | After Filters |
++--------+--------------------------------------------+----------------------+-------------------------------------------------------------+----------------+---------------+
+|        | GET /                                      |                      | Closure                                                     |                |               |
+|        | POST /v0                                   |                      | Closure                                                     |                |               |
+|        | GET /asd                                   |                      | Closure                                                     | api-auth       |               |
+|        | GET /user/{name}                           |                      | Closure                                                     |                |               |
+|        | GET /user/{id}                             |                      | Closure                                                     |                |               |
+|        | POST /v0/login                             |                      | Closure                                                     | api-login      |               |
+|        | POST /v0/signup                            |                      | Closure                                                     |                |               |
+|        | GET /v0/users/{id}/friends                 |                      | Codeaqua\Controllers\FriendsController@getIndex             |                |               |
+|        | POST /v0/users/{id}/friends                |                      | Codeaqua\Controllers\FriendsController@postIndex            |                |               |
+|        | POST /v0/users/{userId}/friends/{friendId} |                      | Codeaqua\Controllers\FriendsController@postUpdateFriendship |                |               |
+|        | GET /v0/users/{userId}/requests            |                      | Codeaqua\Controllers\FriendsController@getFriendRequests    |                |               |
+|        | GET /v0/users                              | v0.users.index       | Codeaqua\Controllers\UsersController@index                  |                |               |
+|        | GET /v0/users/create                       | v0.users.create      | Codeaqua\Controllers\UsersController@create                 |                |               |
+|        | POST /v0/users                             | v0.users.store       | Codeaqua\Controllers\UsersController@store                  |                |               |
+|        | GET /v0/users/{users}                      | v0.users.show        | Codeaqua\Controllers\UsersController@show                   |                |               |
+|        | GET /v0/users/{users}/edit                 | v0.users.edit        | Codeaqua\Controllers\UsersController@edit                   |                |               |
+|        | PUT /v0/users/{users}                      | v0.users.update      | Codeaqua\Controllers\UsersController@update                 |                |               |
+|        | PATCH /v0/users/{users}                    |                      | Codeaqua\Controllers\UsersController@update                 |                |               |
+|        | DELETE /v0/users/{users}                   | v0.users.destroy     | Codeaqua\Controllers\UsersController@destroy                |                |               |
+|        | GET /v0/photos                             | v0.photos.index      | Codeaqua\Controllers\PhotosController@index                 |                |               |
+|        | GET /v0/photos/create                      | v0.photos.create     | Codeaqua\Controllers\PhotosController@create                |                |               |
+|        | POST /v0/photos                            | v0.photos.store      | Codeaqua\Controllers\PhotosController@store                 |                |               |
+|        | GET /v0/photos/{photos}                    | v0.photos.show       | Codeaqua\Controllers\PhotosController@show                  |                |               |
+|        | GET /v0/photos/{photos}/edit               | v0.photos.edit       | Codeaqua\Controllers\PhotosController@edit                  |                |               |
+|        | PUT /v0/photos/{photos}                    | v0.photos.update     | Codeaqua\Controllers\PhotosController@update                |                |               |
+|        | PATCH /v0/photos/{photos}                  |                      | Codeaqua\Controllers\PhotosController@update                |                |               |
+|        | DELETE /v0/photos/{photos}                 | v0.photos.destroy    | Codeaqua\Controllers\PhotosController@destroy               |                |               |
+|        | GET /v0/locations/near                     |                      | Codeaqua\Controllers\LocationsController@near               |                |               |
+|        | GET /v0/locations                          | v0.locations.index   | Codeaqua\Controllers\LocationsController@index              |                |               |
+|        | GET /v0/locations/create                   | v0.locations.create  | Codeaqua\Controllers\LocationsController@create             |                |               |
+|        | POST /v0/locations                         | v0.locations.store   | Codeaqua\Controllers\LocationsController@store              |                |               |
+|        | GET /v0/locations/{locations}              | v0.locations.show    | Codeaqua\Controllers\LocationsController@show               |                |               |
+|        | GET /v0/locations/{locations}/edit         | v0.locations.edit    | Codeaqua\Controllers\LocationsController@edit               |                |               |
+|        | PUT /v0/locations/{locations}              | v0.locations.update  | Codeaqua\Controllers\LocationsController@update             |                |               |
+|        | PATCH /v0/locations/{locations}            |                      | Codeaqua\Controllers\LocationsController@update             |                |               |
+|        | DELETE /v0/locations/{locations}           | v0.locations.destroy | Codeaqua\Controllers\LocationsController@destroy            |                |               |
+|        | GET /v0/groups                             | v0.groups.index      | Codeaqua\Controllers\GroupsController@index                 |                |               |
+|        | GET /v0/groups/create                      | v0.groups.create     | Codeaqua\Controllers\GroupsController@create                |                |               |
+|        | POST /v0/groups                            | v0.groups.store      | Codeaqua\Controllers\GroupsController@store                 |                |               |
+|        | GET /v0/groups/{groups}                    | v0.groups.show       | Codeaqua\Controllers\GroupsController@show                  |                |               |
+|        | GET /v0/groups/{groups}/edit               | v0.groups.edit       | Codeaqua\Controllers\GroupsController@edit                  |                |               |
+|        | PUT /v0/groups/{groups}                    | v0.groups.update     | Codeaqua\Controllers\GroupsController@update                |                |               |
+|        | PATCH /v0/groups/{groups}                  |                      | Codeaqua\Controllers\GroupsController@update                |                |               |
+|        | DELETE /v0/groups/{groups}                 | v0.groups.destroy    | Codeaqua\Controllers\GroupsController@destroy               |                |               |
+|        | POST /v0/groups/{id}/join                  |                      | Codeaqua\Controllers\GroupsUsersController@join             |                |               |
+|        | POST /v0/groups/{groupId}/users/{userId}   |                      | Codeaqua\Controllers\GroupsUsersController@editMembership   |                |               |
+|        | GET /v0/groups/{groupId}/users             |                      | Codeaqua\Controllers\GroupsUsersController@users            |                |               |
+|        | GET /v0/parties                            | v0.parties.index     | Codeaqua\Controllers\PartiesController@index                |                |               |
+|        | GET /v0/parties/create                     | v0.parties.create    | Codeaqua\Controllers\PartiesController@create               |                |               |
+|        | POST /v0/parties                           | v0.parties.store     | Codeaqua\Controllers\PartiesController@store                |                |               |
+|        | GET /v0/parties/{parties}                  | v0.parties.show      | Codeaqua\Controllers\PartiesController@show                 |                |               |
+|        | GET /v0/parties/{parties}/edit             | v0.parties.edit      | Codeaqua\Controllers\PartiesController@edit                 |                |               |
+|        | PUT /v0/parties/{parties}                  | v0.parties.update    | Codeaqua\Controllers\PartiesController@update               |                |               |
+|        | PATCH /v0/parties/{parties}                |                      | Codeaqua\Controllers\PartiesController@update               |                |               |
+|        | DELETE /v0/parties/{parties}               | v0.parties.destroy   | Codeaqua\Controllers\PartiesController@destroy              |                |               |
+|        | POST /v0/parties/{id}/join                 |                      | Codeaqua\Controllers\PartiesUsersController@join            |                |               |
+|        | POST /v0/parties/{id}/unjoin               |                      | Codeaqua\Controllers\PartiesUsersController@unjoin          |                |               |
+|        | POST /v0/parties/{id}/checkin              |                      | Codeaqua\Controllers\PartiesUsersController@checkin         |                |               |
+|        | POST /v0/parties/{id}/checkout             |                      | Codeaqua\Controllers\PartiesUsersController@checkout        |                |               |
+|        | GET /v0/parties/{id}/checkins              |                      | Codeaqua\Controllers\PartiesUsersController@checkins        |                |               |
+|        | GET /v0/parties/{id}/joining               |                      | Codeaqua\Controllers\PartiesUsersController@joining         |                |               |
+|        | POST /v0/parties/{partyId}/users/{userId}  |                      | Codeaqua\Controllers\PartiesUsersController@edit            |                |               |
++--------+--------------------------------------------+----------------------+-------------------------------------------------------------+----------------+---------------+
